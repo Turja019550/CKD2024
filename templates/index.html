@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKD Prediction App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"], input[type="submit"] {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CKD Prediction App</h1>
+        <form action="/predict" method="post">
+            <label for="serum_creatinine">Serum Creatinine:</label>
+            <input type="text" name="serum_creatinine" required>
+
+            <label for="blood_urea">Blood Urea:</label>
+            <input type="text" name="blood_urea" required>
+
+            <label for="blood_pressure">Blood Pressure:</label>
+            <input type="text" name="blood_pressure" required>
+
+            <label for="albumin">Albumin:</label>
+            <input type="text" name="albumin" required>
+
+            <label for="haemoglobin">Haemoglobin:</label>
+            <input type="text" name="haemoglobin" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+            <div class="result">
+                <p>{{ prediction_text }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
