@@ -7,7 +7,7 @@ Chronic Kidney Disease (CKD) Detection using Machine Learning
 
 📊 Trained on a dataset with 401 patient records and 26 medical features.
 
-🤖 Used 10 ML algorithms; Random Forest achieved ~97% accuracy.
+🤖 Used 10 ML algorithms; Random Forest achieved ~96% accuracy.
 
 ✅ Evaluated using accuracy, precision, recall, and F1-score.
 
